@@ -15,7 +15,7 @@ public class Player  {
     private enum Direction {
         NORTH, EAST, SOUTH, WEST, NONE
     }
-
+    
 
     protected int width;
     protected int height;
