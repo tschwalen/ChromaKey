@@ -7,5 +7,5 @@ package com.example.thoma.chromakey;
  */
 
 public enum TileType {
-    FLOOR, WALL, GATE, CHANGER, ICE
+    FLOOR, WALL, GATE, DELTA, ICE
 }

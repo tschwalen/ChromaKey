@@ -83,12 +83,21 @@ public class Player  {
         }
         pix_moved += speed;
 
-        if(pix_moved == tilesize) {
+        if(pix_moved >= tilesize) {
+
             moving = false;
             movedir = Direction.NONE;
             pix_moved = 0;
+            checkDeltaTileEvent();
         }
     }
+
+    private void checkDeltaTileEvent(){
+        GameTile current_tile = gameSurface.gameMap.getTileAt((int)x_pos, (int)y_pos);
+        if(current_tile.type == TileType.DELTA)
+            this.color = current_tile.color;
+    }
+
 
     public void touchEvent(int x, int y){
         // ignore touch events if in movement
@@ -138,7 +147,7 @@ public class Player  {
             movedir = Direction.SOUTH;
         }
 
-        if(desiredTile.color == Color.BLACK || desiredTile.color == color){
+        if(desiredTile.color == Color.BLACK || desiredTile.color == color || desiredTile.type == TileType.DELTA){
             //x_pos = desired_x;
             //y_pos = desired_y;
             moving = true;

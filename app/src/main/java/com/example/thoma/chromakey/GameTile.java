@@ -10,6 +10,7 @@ import android.graphics.Color;
 public class GameTile {
     TileType type;
     int color;
+    int id;
 
     // might need?
     int row; int col;
@@ -18,6 +19,7 @@ public class GameTile {
     public  GameTile(TileType type, int color){
         this.type = type;
         this.color = color;
+        this.id = 0;
     }
 
 

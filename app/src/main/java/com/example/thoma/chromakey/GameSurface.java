@@ -27,7 +27,7 @@ import java.util.List;
 
 public class GameSurface extends SurfaceView implements SurfaceHolder.Callback{
 
-    public Map gameMap = new Map();
+    public Map gameMap = new Map(this);
     private GameThread gameThread;
 
     Player player;
