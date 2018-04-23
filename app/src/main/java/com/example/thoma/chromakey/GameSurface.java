@@ -21,12 +21,14 @@ import java.util.List;
 
 /**
  * Created by thoma on 1/7/2018.
+ * Main game surface class
  */
 
 public class GameSurface extends SurfaceView implements SurfaceHolder.Callback{
 
     public Map gameMap = new Map();
     private GameThread gameThread;
+
     Player player;
 
     public GameSurface(Context context){
@@ -67,7 +69,7 @@ public class GameSurface extends SurfaceView implements SurfaceHolder.Callback{
     @Override
     public void surfaceCreated(SurfaceHolder holder) {
         Bitmap chromaBitmap = BitmapFactory.decodeResource(this.getResources(),R.drawable.chroma2);
-        player = new Player(chromaBitmap, 88 * 1, 88 * 5, this);
+        player = new Player(chromaBitmap, 88, 88 * 5, this);
 
         this.gameThread = new GameThread(this,holder);
         this.gameThread.setRunning(true);
