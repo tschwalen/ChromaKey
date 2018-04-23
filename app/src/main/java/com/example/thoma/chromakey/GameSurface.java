@@ -22,6 +22,7 @@ import java.util.List;
 /**
  * Created by thoma on 1/7/2018.
  * Main game surface class
+ *
  */
 
 public class GameSurface extends SurfaceView implements SurfaceHolder.Callback{
